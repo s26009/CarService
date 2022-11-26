@@ -1,5 +1,8 @@
 package com.s26009.service.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car {
     private String make;
     private String model;

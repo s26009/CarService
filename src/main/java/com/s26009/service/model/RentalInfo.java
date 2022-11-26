@@ -1,5 +1,7 @@
 package com.s26009.service.model;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.time.Period;
 

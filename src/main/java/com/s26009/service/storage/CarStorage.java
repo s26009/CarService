@@ -2,6 +2,7 @@ package com.s26009.service.storage;
 
 
 import com.s26009.service.model.Car;
+import com.s26009.service.model.Rental;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,17 @@ public class CarStorage {
             }
         }
         return null;
+    }
+
+    public void printAllCars() {
+        System.out.println("----------CARS---------");
+        for (Car c : cars) {
+            System.out.println("[ VIN: " + c.getVin() +
+                    ", MAKE: " + c.getMake() +
+                    ", MODEL: " + c.getModel() +
+                    ", END: " + c.getPriceForOneDay() + " ]");
+        }
+        System.out.println("-----------------------");
     }
 
     public void setCars(List<Car> cars) {

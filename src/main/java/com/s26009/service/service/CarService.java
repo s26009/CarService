@@ -12,8 +12,8 @@ import java.time.Period;
 import java.util.List;
 
 public class CarService {
-    private CarStorage carStorage;
-    private RentalStorage rentalStorage;
+    private final CarStorage carStorage;
+    private final RentalStorage rentalStorage;
 
     public CarService() {
         carStorage = new CarStorage();
@@ -26,6 +26,10 @@ public class CarService {
 
     public List<Rental> getAllRentals() {
         return rentalStorage.getRentals();
+    }
+
+    public void printAllCars() {
+        carStorage.printAllCars();
     }
 
     public void printAllRentals() {
