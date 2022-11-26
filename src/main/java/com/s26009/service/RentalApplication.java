@@ -15,7 +15,7 @@ public class RentalApplication {
         SpringApplication.run(RentalApplication.class, args);
 
         LocalDate start = LocalDate.of(2022,5,10);
-        LocalDate end = LocalDate.of(2022,5,13);
+        LocalDate end = LocalDate.of(2022,5,24);
         CarService carService = new CarService();
 
         carService.printAllRentals();

@@ -16,7 +16,7 @@ public class RentalStorage {
     public RentalStorage() {
         rentals = new ArrayList<>();
         rentals.add(new Rental(
-                LocalDate.now(), LocalDate.now().plusDays(1L), 100.0,
+                LocalDate.now(), LocalDate.now().plusDays(12L), 100.0,
                 new User("hleb"),
                 new Car("Audi", "A1", "1", 100.0)));
     }

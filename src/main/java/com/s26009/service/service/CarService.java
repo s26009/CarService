@@ -43,8 +43,8 @@ public class CarService {
                 Rental newRental = new Rental(startDate, endDate, requestedCar.getPriceForOneDay(), user, requestedCar);
                 rentalStorage.getRentals().add(newRental);
                 System.out.println("Car " + requestedCar.getMake() + " " + requestedCar.getModel()
-                        + " is rented successfully for " + user.getAccId() +
-                        " ($" + newRental.getPrice() + ", for $" + requestedCar.getPriceForOneDay() + " a day)!");
+                        + " is rented successfully for " + user.getAccId()
+                        + " ($" + newRental.getPrice() + ", for $" + requestedCar.getPriceForOneDay() + " a day)!");
                 return newRental.getRentalInfo();
             } else {
                 System.out.println("Car already rented.");
