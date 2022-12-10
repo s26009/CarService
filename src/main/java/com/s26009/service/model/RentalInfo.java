@@ -9,11 +9,16 @@ public class RentalInfo {
     private double price;
     private LocalDate startDate;
     private LocalDate endDate;
+    private String errorMessage;
 
     public RentalInfo(double priceForOneDay, LocalDate startDate, LocalDate endDate) {
         this.price = priceForOneDay * Period.between(startDate, endDate).getDays();
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public RentalInfo(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     public double getPrice() {
@@ -40,12 +45,21 @@ public class RentalInfo {
         this.endDate = endDate;
     }
 
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
     @Override
     public String toString() {
         return "RentalInfo{" +
                 "price=" + price +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
+                ", errorMessage='" + errorMessage + '\'' +
                 '}';
     }
 }

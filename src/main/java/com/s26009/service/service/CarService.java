@@ -37,6 +37,9 @@ public class CarService {
     }
 
     public RentalInfo rentCar(User user, String vin, LocalDate startDate, LocalDate endDate) {
+        if (startDate.isAfter(endDate)) {
+            return new RentalInfo("Invalid rental period (start date is after end date.");
+        }
         Car requestedCar = carStorage.getCarByVin(vin);
         if (requestedCar != null) {
             if (rentalStorage.getRentalByVin(vin) == null) {
@@ -47,12 +50,10 @@ public class CarService {
                         + " ($" + newRental.getPrice() + ", for $" + requestedCar.getPriceForOneDay() + " a day)!");
                 return newRental.getRentalInfo();
             } else {
-                System.out.println("Car already rented.");
-                return null;
+                return new RentalInfo("Car already rented by someone else.");
             }
         } else {
-            System.out.println("We don't have such car.");
-            return null;
+            return new RentalInfo("We don't have such car.");
         }
     }
 
